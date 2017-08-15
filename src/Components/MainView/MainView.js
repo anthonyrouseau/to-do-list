@@ -2,6 +2,7 @@
 import './MainView.css';
 import { connect } from 'react-redux';
 import TaskList from '../TaskList/TaskList.js';
+import { toggleTask } from '../../Actions/TaskActions.js'
 
 // class MainView extends Component {
 //
@@ -20,7 +21,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    onTaskClick: id => {
+      dispatch(toggleTask(id))
+    }
   }
 }
 

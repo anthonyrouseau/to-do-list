@@ -10,19 +10,24 @@ class Task extends Component {
 
   render() {
     return (
-      <li>
+      <li onClick={this.props.onClick} style={{textDecoration: this.props.completed ? 'line-through' : 'none'}}>
         {this.props.text}
       </li>
     );
   }
 }
 
-// Task.defaultProps = {
-//   text : ""
-// }
+Task.defaultProps = {
+  id: 0,
+  text : "",
+  completed: false,
+}
 
 Task.propTypes = {
-  text: PropTypes.string.isRequired
+  id: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
+  completed: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 export default Task
