@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MainView from './Components/MainView/MainView.js';
+import SideNav from './Components/SideNav/SideNav.js';
 
 class App extends Component {
 
@@ -9,7 +10,7 @@ class App extends Component {
       <div className="app-layout">
         <div id="header"></div>
         <MainView id="main-view" tasks={this.props.tasks}/>
-        <div id="side-nav"></div>
+        <SideNav id="side-nav" />
       </div>
     );
   }

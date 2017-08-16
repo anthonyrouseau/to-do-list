@@ -1,9 +1,10 @@
-export function addTask(text) {
+export function addTask(text, group) {
   return {
     type: "ADD_TASK",
     payload: {
       text: text,
       id: new Date().getTime(),
+      taskGroup: group
     }
   }
 }

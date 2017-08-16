@@ -21,13 +21,14 @@ Task.defaultProps = {
   id: 0,
   text : "",
   completed: false,
+  taskGroup: null
 }
 
 Task.propTypes = {
   id: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
+  taskGroup: PropTypes.number.isRequired
 }
 
 export default Task

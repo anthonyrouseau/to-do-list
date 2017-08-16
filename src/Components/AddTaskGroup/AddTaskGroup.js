@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { addTask } from '../../Actions/Task.js';
 
-class AddTask extends Component {
+class AddTaskGroup extends Component {
   render() {
     let input
     return (
       <div>
-        <form onSubmit= { e => {
+        <form onSubmit= {e => {
             e.preventDefault()
             if (!input.value.trim()) {
               input.value = '';
               return
             }
-            this.props.dispatch(addTask(input.value, this.props.currentGroup));
+            this.props.addGroup(input.value);
             input.value = '';
-          }}
+            return
+        }}
         >
-          <input
-            ref={node => {
+          <input ref={node => {
               input = node
-            }}
+          }}
           />
           <button type="submit">
-            Add Task
+            Add Task Group
           </button>
         </form>
       </div>
@@ -31,4 +29,4 @@ class AddTask extends Component {
   }
 }
 
-export default connect()(AddTask)
+export default AddTaskGroup
